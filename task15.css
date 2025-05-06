@@ -1,0 +1,253 @@
+html,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    background-color: #DFD0B8;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.main {
+    height: 30rem;
+    padding-top: 1rem;
+    background-image: url('https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tsunami-coffee/images/bg-photo.png');
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 2s ease-in-out;
+    background-color: #DFD0B8;
+}
+
+.main img {
+    width: 15rem;
+    display: block;
+    margin: 5rem auto 0 auto;
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+nav {
+    background-color: #222831;
+    height: 4rem;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+li {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 6px;
+}
+
+li:hover {
+    background-color: #cc3300;
+    transform: scale(1.05);
+}
+
+.supporting,
+.rating,
+.gallery,
+.location {
+    margin: 4em auto;
+}
+
+.supporting {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 1rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.supporting img {
+    width: 10%;
+    height: 10%;
+    margin-right: 5%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.description h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.description p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.rating {
+    background: #222831;
+    height: 15rem;
+    padding: 0 1rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: pulse 4s infinite;
+    border-radius: 20px;
+    width: 90%;
+}
+
+.rating h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes pulse {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+.gallery img {
+    display: block;
+    width: 30%;
+    margin: 1.5%;
+    float: left;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+.clearfix {
+    clear: both;
+}
+
+.location {
+    text-align: center;
+    margin-bottom: 7rem;
+}
+
+.location img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #222831;
+    padding: 0 1rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3em 0;
+    color: white;
+    flex-wrap: wrap;
+    border-top: 2px solid white;
+
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries */
+@media screen and (max-width: 960px) {
+    .main {
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .supporting img {
+        display: none;
+    }
+
+    .supporting {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .rating h1 {
+        font-size: 2rem;
+    }
+
+    .gallery img {
+        width: 100%;
+        margin: 0;
+        float: none;
+    }
+
+    footer nav {
+        padding: 1rem 1.5rem 0 1.5rem;
+    }
+
+    footer .container {
+        justify-content: center;
+        text-align: center;
+    }
+}
